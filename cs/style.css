@@ -202,7 +202,15 @@ button,.button{
 .disabled{
     display: none;
 }
+/* MENSAJE DE ERROR */
 
+.error-message{
+color: #b71c1c; 
+  font-size: 0.6em;
+  margin-bottom: 1em;
+  text-align: left;
+  display: block;
+}
 /* RESPONSIVE */
 @media screen and (min-width: 800px) {
 

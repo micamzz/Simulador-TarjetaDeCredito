@@ -32,6 +32,7 @@ inputNumber.addEventListener('input', () => {
    if(inputNumber.value.length === 0){
     cardNumber.innerText = '0000 0000 0000 0000';
    }
+
 });
 
 inputMonth.addEventListener('input', () => {
@@ -58,23 +59,68 @@ inputCVC.addEventListener('input', () => {
    }
 });
 
-form.addEventListener('submit', (evento) =>{
-    evento.preventDefault();
+form.addEventListener('submit', (evento) => {
+   evento.preventDefault();
 
-    form.classList.add('disabled');
-    msj.classList.remove('disabled');
+   const isNameValid = validateField(inputName, 'El nombre no puede estar vacío');
+   let isNumberValid = validateField(inputNumber, 'El número de tarjeta no puede estar vacío');
+   const isMonthValid = validateField(inputMonth, 'Por favor, complete el mes');
+   const isYearValid = validateField(inputYear, 'Por favor, complete el año');
+   const isCvcValid = validateField(inputCVC, 'Por favor, complete el codigo de seguridad');
+
+   if(isNumberValid){
+      if(inputNumber.value.length < 19){
+         renderError(inputNumber, 'El número debe tener 16 digitos');
+         isNumberValid = false;
+      }
+   }
+   
+   if (isNameValid && isNumberValid && isMonthValid && isYearValid && isCvcValid) {
+      form.classList.add('disabled');
+      msj.classList.remove('disabled');
+   }
+});
+
+buttomContinue.addEventListener('click', () => {
+
+   form.classList.remove('disabled');
+   msj.classList.add('disabled');
+   form.reset();
+   cardName.innerText = 'Jane Appleseed';
+   cardNumber.innerText = '0000 0000 0000 0000';
+   cardCVC.innerText = '000';
+   cardYear.innerText = '00';
+   cardMonth.innerText = '00';
 
 });
 
 
-buttomContinue.addEventListener('click', ()=>{
+function validateField(inputElement, mensajeError) {
 
-    form.classList.remove('disabled');
-    msj.classList.add('disabled');
-    form.reset();
-    cardNumber.innerText = '0000 0000 0000 0000';
-     cardCVC.innerText = '000';
-     cardYear.innerText = '00';
-     cardMonth.innerText = '00';
+   let msjExistente = inputElement.nextElementSibling;
 
-});
+   if (inputElement.value.trim() === '') {
+      renderError(inputElement, mensajeError);
+      return false;
+   } else {
+      if (msjExistente && msjExistente.classList.contains('error-message')) {
+         msjExistente.remove();
+      }
+      return true;
+   }
+}
+
+
+function renderError(input, mensaje){
+   const msjExistente = input.nextElementSibling;
+
+    if (!msjExistente || !msjExistente.classList.contains('error-message')) {
+         const errorTag = document.createElement('span');
+         errorTag.textContent = mensaje;
+         errorTag.classList.add('error-message');
+         input.insertAdjacentElement('afterend', errorTag);
+
+      }else{
+         msjExistente.textContent = mensaje;
+      }
+}
