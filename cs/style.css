@@ -159,6 +159,11 @@ body{
     color: var(--color-light-gray);
 }
 
+.input-box {
+    display: flex;
+    flex-direction: column; 
+    width: 100%;            
+}
 .label{
     text-transform: uppercase;
     font-size: 0.75rem;
@@ -211,6 +216,8 @@ color: #b71c1c;
   text-align: left;
   display: block;
 }
+
+
 /* RESPONSIVE */
 @media screen and (min-width: 800px) {
 

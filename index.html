@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./cs/style.css">
     <title>Document</title>
 </head>
+
 <body>
-  <main class="wrapper">
+    <main class="wrapper">
         <section class="card">
             <div class="card-front">
                 <img src="./images/bg-card-front.png" alt="Frente de la tarjeta">
                 <div class="card-front-data">
                     <img src="./images/card-logo.svg" alt="">
-                  <div>
+                    <div>
 
-                 <div>
-                    <p class="card-number">0000 0000 0000 0000</p>
+                        <div>
+                            <p class="card-number">0000 0000 0000 0000</p>
+                        </div>
+                        <div class="card-name-date">
+                            <p class="card-name" id="card-name"> Jane Appleseed</p>
+                            <p class="card-date">
+                                <span id="card-month">00</span>/
+                                <span id="card-year">00</span>
+                            </p>
+                        </div>
                     </div>
-                    <div class="card-name-date">
-                        <p class="card-name" id="card-name"> Jane Appleseed</p>
-                        <p class="card-date">
-                             <span id="card-month">00</span>/
-                            <span id="card-year">00</span>
-                        </p>
-                    </div>
-                  </div>
                 </div>
             </div>
-        
+
             <div class="card-back">
                 <img src="./images/bg-card-back.png" alt="Dorso de la tarjeta">
                 <div class="card-back-data">
@@ -37,35 +39,42 @@
             </div>
         </section>
 
-
         <div class="form-wrapper">
             <form class="form">
                 <section class="form-group">
                     <label for="input-name" class="label"> Nombre y Apellido</label>
                     <input type="text" class="input" id="input-name" placeholder="Jane Appleseed">
                 </section>
-        
+
                 <section class="form-group">
                     <label for="input-number" class="label"> Número de Tarjeta</label>
-                    <input type="text" class="input" id="input-number" placeholder="1234 5678 91011" inputmode="numeric">
+                    <input type="text" class="input" id="input-number" placeholder="XXXX XXXX XXXX XXXX"
+                        inputmode="numeric">
                 </section>
-        
+
                 <section class="form-group double">
                     <article class="rows">
                         <label for="input-month" class="label">Vencimiento(MM/YY)</label>
-        
                         <div class="columns">
-                            <input type="text" class="input" id="input-month" placeholder="MM" maxlength="2" inputmode="numeric">
-                            <input type="text" class="input" id="input-year" placeholder="YY" maxlength="2" inputmode="numeric">
+                            <div class="input-box">
+                                <input type="text" class="input" id="input-month" placeholder="MM" maxlength="2"
+                                    inputmode="numeric">
+                            </div>
+
+                            <div class="input-box">
+                                <input type="text" class="input" id="input-year" placeholder="YY" maxlength="2"
+                                    inputmode="numeric">
+                            </div>
                         </div>
                     </article>
-        
+
                     <article class="rows">
                         <label for="input-cvc" class="label"> CVC</label>
-                        <input type="text" class="input" id="input-cvc" placeholder="e.g 123" maxlength="3" inputmode="numeric">
+                        <input type="text" class="input" id="input-cvc" placeholder="e.g 123" maxlength="3"
+                            inputmode="numeric">
                     </article>
                 </section>
-        
+
                 <section class="form-group">
                     <button class="button" type="submit"> Confirmar</button>
                 </section>
@@ -77,15 +86,18 @@
                 <p class="thank-you-text"> Hemos añadido los detalles de tu tarjeta</p>
                 <button class="button" id="continue">Continuar</button>
             </section>
-            </div>
-        
+        </div>
 
-   
 
-  </main>
+
+
+    </main>
 
     <!-- JS -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.0.2/cleave.min.js" integrity="sha512-SvgzybymTn9KvnNGu0HxXiGoNeOi0TTK7viiG0EGn2Qbeu/NFi3JdWrJs2JHiGA1Lph+dxiDv5F9gDlcgBzjfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="./js/main.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.0.2/cleave.min.js"
+        integrity="sha512-SvgzybymTn9KvnNGu0HxXiGoNeOi0TTK7viiG0EGn2Qbeu/NFi3JdWrJs2JHiGA1Lph+dxiDv5F9gDlcgBzjfA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/main.js"></script>
 </body>
+
 </html>
