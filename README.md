@@ -1,11 +1,11 @@
-💳 #Simulador Interactivo de Tarjeta de Crédito
+# 💳 Simulador Interactivo de Tarjeta de Crédito
 Este proyecto forma parte del desafío de Frontend Mentor, que consiste en construir un formulario interactivo para simular el ingreso de datos de una tarjeta de crédito.
 La tarjeta se actualiza visualmente en tiempo real, y todas las entradas cuentan con validaciones robustas para asegurar una experiencia realista y confiable.
 
-🔗 ##Desafío original:
+## 🔗 Desafío original:
 https://www.frontendmentor.io/solutions/interactive-card-details-form-using-html-css-and-javascript-N8QH2WgExf
 
-##Características:
+## Características:
 -Validación Robusta:
 Verificación de formato, longitud y validación avanzada de la fecha de caducidad (mes/año) para asegurar que la tarjeta no esté vencida.
 
@@ -18,7 +18,7 @@ Implementación de Cleave.js para formatear automáticamente el número de tarje
 -Flujo de Éxito:
 Cuando todas las validaciones son correctas, se muestra una pantalla de “Gracias” indicando que los datos se cargaron correctamente.
 
- ##Puntos Clave del Desarrollo
+ ## Puntos Clave del Desarrollo
 Este proyecto consolidó la aplicación de JavaScript nativo en un entorno real con enfoque en la experiencia de usuario y la seguridad de datos mediante validación.
 -Validación de Fechas: Implementación de lógica para comparar el mes y año ingresados contra la fecha actual, incluyendo el manejo del caso donde el año es el actual, pero el mes ya expiró.
 -Modularidad de Errores: Creación de funciones reutilizables (validateField, renderError) para gestionar dinámicamente la creación y eliminación de mensajes de error en el DOM.
